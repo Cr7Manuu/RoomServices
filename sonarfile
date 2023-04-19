@@ -1,10 +1,11 @@
 pipeline{
     agent any
-    stages{
-        tools
+    tools
         {
             maven "maven"
         }
+    stages{
+        
         stage('SonarQube analusis'){
             
         steps{
