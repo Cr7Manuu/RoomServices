@@ -1,15 +1,12 @@
 pipeline{
-    agent any
-    stages{
-        stage('SonarQube analusis')
-        {
-        steps
-        {
-        withSonarQubeEnv('sonarcicd')
-        {
-        bat "mvn sonar:sonar"
-        }    
-        }    
+        agent any
+        stages{
+            stage('SonarQube analysis'){
+            steps{
+            withSonarQubeEnv('sonarcicd')
+            {
+            bat "mvn sonar:sonar"
+            }
+            }
         }
-    }
 }
