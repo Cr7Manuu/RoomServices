@@ -6,9 +6,12 @@ pipeline{
         steps{
         withSonarQubeEnv('sonarcicd')
         {
+        withMaven(maven:'maven')
+        {
         bat "mvn sonar:sonar"
         }    
         }    
+        }
         }
     }
 }
